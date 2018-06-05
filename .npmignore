@@ -1,0 +1,11 @@
+# IDE
+/.idea
+
+# configuration
+/.gitignore
+/.npmignore
+/yarn.lock
+/package-lock.json
+
+# packages
+*.tgz
