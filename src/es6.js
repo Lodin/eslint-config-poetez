@@ -5,7 +5,7 @@ module.exports = {
   "constructor-super": "error",
   "generator-star-spacing": ["error", {before: true, after: false}],
   "no-class-assign": "error",
-  "no-confusing-arrow": ["error", {allowParens: false}],
+  "no-confusing-arrow": ["error", {allowParens: true}],
   "no-const-assign": "error",
   "no-dupe-class-members": "error",
   "no-duplicate-imports": "error",

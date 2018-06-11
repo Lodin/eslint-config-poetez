@@ -97,7 +97,7 @@ module.exports = {
   // handled by "one-var" rule
   "one-var-declaration-per-line": "off",
   "operator-assignment": ["error", "always"],
-  "operator-linebreak": ["error", "before"],
+  "operator-linebreak": ["error", "before", {overrides: {"=": "after"}}],
   "padded-blocks": ["error", "never"],
   "padding-line-between-statements": ["error", {
     blankLine: "always",
