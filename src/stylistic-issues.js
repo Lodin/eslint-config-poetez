@@ -40,10 +40,14 @@ module.exports = {
   "lines-between-class-members": ["error", "always", {exceptAfterSingleLine: true}],
   "max-depth": ["error", 4],
   "max-len": ["error", {
-    code: 140,
-    ignoreTrailingComments: true,
+    code: 100,
     ignoreUrls: true,
+    ignoreComments: false,
     ignoreRegExpLiterals: true,
+    ignoreStrings: true,
+    ignoreTemplateLiterals: true,
+    ignoreTrailingComments: true,
+    tabWidth: 2,
   }],
   // it can be impossible to avoid too big files
   "max-lines": "off",
