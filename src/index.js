@@ -6,14 +6,14 @@ const stylisticIssues = require('./stylistic-issues');
 const variables = require('./variables');
 
 module.exports = {
-  parser: "babel-eslint",
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: "module",
+    sourceType: 'module',
   },
   rules: {
     // sourceType is "module"
-    "strict": "off",
+    'strict': 'off',
     ...bestPractices,
     ...es6,
     ...node,
