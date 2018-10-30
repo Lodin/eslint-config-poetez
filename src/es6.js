@@ -34,7 +34,7 @@ module.exports = {
   "rest-spread-spacing": ["error", "never"],
   // handled by "eslint-plugin-import" rules
   "sort-imports": "off",
-  "symbol-description": "error",
+  "symbol-description": "off",
   "template-curly-spacing": ["error", "never"],
   "yield-star-spacing": "error",
 };
