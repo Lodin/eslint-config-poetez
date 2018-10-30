@@ -106,7 +106,7 @@ module.exports = {
   }],
   "prefer-object-spread": "error",
   "quote-props": ["error", "as-needed"],
-  "quotes": ["error", "double", {allowTemplateLiterals: true}],
+  "quotes": ["error", "single", {allowTemplateLiterals: true}],
   // JSDoc is useful, but enforcing it is too strict
   "require-jsdoc": "off",
   "semi": ["error", "always"],
