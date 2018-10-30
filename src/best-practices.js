@@ -11,7 +11,8 @@ module.exports = {
   'default-case': ['error', {commentPattern: '^no\\sdefault'}],
   'dot-location': ['error', 'property'],
   'dot-notation': ['error', {allowPattern: '^[a-zA-Z]+([_-][a-zA-Z]+)+$'}],
-  'eqeqeq': ['error', 'always'],
+  // using non-strict comparison with null could be useful
+  'eqeqeq': ['error', 'always', {'null': 'ignore'}],
   'guard-for-in': 'error',
   'max-classes-per-file': ['error', 1],
   'no-alert': 'error',
