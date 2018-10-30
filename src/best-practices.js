@@ -21,7 +21,8 @@ module.exports = {
   'no-else-return': 'error',
   'no-empty-function': 'error',
   'no-empty-pattern': 'error',
-  'no-eq-null': 'error',
+  // handled by "eqeqeq" rule
+  'no-eq-null': 'off',
   'no-eval': 'error',
   'no-extend-native': 'error',
   'no-extra-bind': 'error',
