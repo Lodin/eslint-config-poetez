@@ -15,11 +15,11 @@ module.exports = {
   'no-undefined': 'off',
   'no-unused-vars': ['error', {
     args: 'all',
-    argsIgnorePattern: '^_[a-zA-Z]+$',
+    argsIgnorePattern: '^_[a-zA-Z]*$',
     caughtErrors: 'all',
-    caughtErrorsIgnorePattern: '^_[a-zA-Z]+$',
+    caughtErrorsIgnorePattern: '^_[a-zA-Z]*$',
     vars: 'all',
-    varsIgnorePattern: '^_[a-zA-Z]+$',
+    varsIgnorePattern: '^_[a-zA-Z]*$',
   }],
   'no-use-before-define': 'error',
 };
