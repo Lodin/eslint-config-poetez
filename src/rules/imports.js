@@ -1,25 +1,19 @@
 module.exports = {
   env: {
-    es6: true
+    es6: true,
   },
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: [
-    'import'
-  ],
+  plugins: ['import'],
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.mjs', '.js', '.json']
-      }
+        extensions: ['.mjs', '.js', '.json'],
+      },
     },
-    'import/extensions': [
-      '.js',
-      '.mjs',
-      '.jsx',
-    ],
+    'import/extensions': ['.js', '.mjs', '.jsx'],
     'import/core-modules': [],
     'import/ignore': [
       'node_modules',
@@ -33,11 +27,14 @@ module.exports = {
     'import/namespace': 'error',
     // no restricted paths by default
     'import/no-restricted-paths': 'off',
-    'import/no-absolute-path': ['error', {
-      // there can be loading files by http/2
-      esmodules: false,
-      commonjs: true,
-    }],
+    'import/no-absolute-path': [
+      'error',
+      {
+        // there can be loading files by http/2
+        esmodules: false,
+        commonjs: true,
+      },
+    ],
     // dynamic require can be useful
     'import/no-dynamic-require': 'off',
     // common pattern to use internal modules

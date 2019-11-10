@@ -6,8 +6,12 @@ module.exports = {
     'array-element-newline': 'off',
     'block-spacing': ['error', 'always'],
     'brace-style': ['error', '1tbs'],
-    'camelcase': ['error', {properties: 'always'}],
-    'capitalized-comments': ['error', 'always', {ignoreConsecutiveComments: true }],
+    camelcase: ['error', {properties: 'always'}],
+    'capitalized-comments': [
+      'error',
+      'always',
+      {ignoreConsecutiveComments: true},
+    ],
     'comma-dangle': ['error', 'always-multiline'],
     'comma-spacing': 'error',
     'comma-style': ['error', 'last'],
@@ -17,7 +21,7 @@ module.exports = {
     'func-call-spacing': ['error', 'never'],
     'func-name-matching': ['error', 'always'],
     'func-names': ['error', 'always'],
-    'func-style': ['error', 'declaration', {allowArrowFunctions: true }],
+    'func-style': ['error', 'declaration', {allowArrowFunctions: true}],
     // disallows single param with linebreak; not good
     'function-paren-newline': 'off',
     // no ID to forbid by default
@@ -28,9 +32,13 @@ module.exports = {
     'id-match': 'off',
     // there can be both variants
     'implicit-arrow-linebreak': 'off',
-    'indent': ['error', 2, {
-      SwitchCase: 1,
-    }],
+    indent: [
+      'error',
+      2,
+      {
+        SwitchCase: 1,
+      },
+    ],
     'jsx-quotes': ['error', 'prefer-double'],
     'key-spacing': 'error',
     'keyword-spacing': 'error',
@@ -38,18 +46,25 @@ module.exports = {
     'line-comment-position': 'off',
     'linebreak-style': ['error', 'unix'],
     'lines-around-comment': 'error',
-    'lines-between-class-members': ['error', 'always', {exceptAfterSingleLine: true}],
+    'lines-between-class-members': [
+      'error',
+      'always',
+      {exceptAfterSingleLine: true},
+    ],
     'max-depth': ['error', 4],
-    'max-len': ['error', {
-      code: 100,
-      ignoreUrls: true,
-      ignoreComments: false,
-      ignoreRegExpLiterals: true,
-      ignoreStrings: true,
-      ignoreTemplateLiterals: true,
-      ignoreTrailingComments: true,
-      tabWidth: 2,
-    }],
+    'max-len': [
+      'error',
+      {
+        code: 100,
+        ignoreUrls: true,
+        ignoreComments: false,
+        ignoreRegExpLiterals: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreTrailingComments: true,
+        tabWidth: 2,
+      },
+    ],
     // it can be impossible to avoid too big files
     'max-lines': 'off',
     'max-nested-callbacks': ['error', 4],
@@ -104,34 +119,43 @@ module.exports = {
     'operator-assignment': ['error', 'always'],
     'operator-linebreak': ['error', 'before', {overrides: {'=': 'after'}}],
     'padded-blocks': ['error', 'never'],
-    'padding-line-between-statements': ['error', {
-      blankLine: 'always',
-      prev: '*',
-      next: 'return',
-    }],
+    'padding-line-between-statements': [
+      'error',
+      {
+        blankLine: 'always',
+        prev: '*',
+        next: 'return',
+      },
+    ],
     'prefer-object-spread': 'error',
     'quote-props': ['error', 'as-needed'],
-    'quotes': ['error', 'single', {allowTemplateLiterals: true}],
+    quotes: ['error', 'single', {allowTemplateLiterals: true}],
     // JSDoc is useful, but enforcing it is too strict
     'require-jsdoc': 'off',
-    'semi': ['error', 'always'],
+    semi: ['error', 'always'],
     'semi-spacing': 'error',
     'semi-style': 'error',
     'sort-keys': ['error', 'asc', {caseSensitive: true, natural: true}],
     // handled by "one-var" rule
     'sort-vars': 'off',
     'space-before-blocks': ['error', 'always'],
-    'space-before-function-paren': ['error', {
-      'anonymous': 'always',
-      'named': 'never',
-      'asyncArrow': 'always'
-    }],
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always',
+      },
+    ],
     'space-in-parens': ['error', 'never'],
     'space-infix-ops': 'error',
-    'space-unary-ops': ['error', {
-      words: true,
-      nonwords: false,
-    }],
+    'space-unary-ops': [
+      'error',
+      {
+        words: true,
+        nonwords: false,
+      },
+    ],
     'spaced-comment': ['error', 'always'],
     'switch-colon-spacing': 'error',
     'template-tag-spacing': ['error', 'never'],

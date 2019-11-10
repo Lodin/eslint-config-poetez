@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    es6: true
+    es6: true,
   },
   parserOptions: {
     ecmaVersion: 2018,
@@ -26,14 +26,21 @@ module.exports = {
     'no-useless-rename': 'error',
     'no-var': 'error',
     'object-shorthand': ['error', 'always'],
-    'prefer-arrow-callback': ['error', {allowNamedFunctions: false, allowUnboundThis: false}],
+    'prefer-arrow-callback': [
+      'error',
+      {allowNamedFunctions: false, allowUnboundThis: false},
+    ],
     'prefer-const': ['error', {ignoreReadBeforeAssign: true}],
-    'prefer-destructuring': ['error', {
-      array: true,
-      object: false,
-    }, {
-      enforceForRenamedProperties: false,
-    }],
+    'prefer-destructuring': [
+      'error',
+      {
+        array: true,
+        object: false,
+      },
+      {
+        enforceForRenamedProperties: false,
+      },
+    ],
     'prefer-numeric-literals': 'error',
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',

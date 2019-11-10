@@ -12,20 +12,24 @@ module.exports = {
     'no-dupe-args': 'error',
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
-    'no-empty': ['error', {'allowEmptyCatch': true}],
+    'no-empty': ['error', {allowEmptyCatch: true}],
     'no-empty-character-class': 'error',
     'no-ex-assign': 'error',
     'no-extra-boolean-cast': 'error',
-    'no-extra-parens': ['error', 'all', {
-      conditionalAssign: true,
-      nestedBinaryExpressions: true,
-      ignoreJSX: 'multi-line',
-      enforceForArrowConditionals: true,
-    }],
+    'no-extra-parens': [
+      'error',
+      'all',
+      {
+        conditionalAssign: true,
+        nestedBinaryExpressions: true,
+        ignoreJSX: 'multi-line',
+        enforceForArrowConditionals: true,
+      },
+    ],
     'no-extra-semi': 'error',
     'no-func-assign': 'error',
     'no-inner-declarations': 'error',
-    'no-invalid-regexp': ['error', {'allowConstructorFlags': ['u', 'y']}],
+    'no-invalid-regexp': ['error', {allowConstructorFlags: ['u', 'y']}],
     'no-irregular-whitespace': 'error',
     'no-obj-calls': 'error',
     'no-prototype-builtins': 'error',
@@ -37,13 +41,16 @@ module.exports = {
     'no-unsafe-finally': 'error',
     'no-unsafe-negation': 'error',
     'use-isnan': 'error',
-    'valid-jsdoc': ['error', {
-      prefer: {
-        return: 'returns',
-        virtual: 'abstract',
+    'valid-jsdoc': [
+      'error',
+      {
+        prefer: {
+          return: 'returns',
+          virtual: 'abstract',
+        },
+        requireReturn: false,
       },
-      requireReturn: false,
-    }],
+    ],
     'valid-typeof': ['error', {requireStringLiterals: false}],
   },
 };
