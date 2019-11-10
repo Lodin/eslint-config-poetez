@@ -1,6 +1,7 @@
 module.exports = {
   plugins: [
-    "react",
+    'jsx-a11y',
+    'react'
   ],
 
   parserOptions: {
@@ -10,367 +11,232 @@ module.exports = {
   },
 
   rules: {
-    "no-underscore-dangle": [
-      dangleRules[0], assign({}, dangleRules[1], {
-        allow: dangleRules[1].allow.concat(["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"]),
-      })
-    ],
-
-    "jsx-quotes": ["error", "prefer-double"],
-
-    "class-methods-use-this": [
-      "error", {
-        exceptMethods: [
-          "render",
-          "getInitialState",
-          "getDefaultProps",
-          "getChildContext",
-          "componentWillMount",
-          "UNSAFE_componentWillMount",
-          "componentDidMount",
-          "componentWillReceiveProps",
-          "UNSAFE_componentWillReceiveProps",
-          "shouldComponentUpdate",
-          "componentWillUpdate",
-          "UNSAFE_componentWillUpdate",
-          "componentDidUpdate",
-          "componentWillUnmount",
-          "componentDidCatch",
-          "getSnapshotBeforeUpdate"
-        ],
-      }
-    ],
-
-    "react/display-name": ["off", {ignoreTranspilerName: false}],
-
-    "react/forbid-prop-types": [
-      "error", {
-        forbid: ["any", "array", "object"],
-        checkContextTypes: true,
-        checkChildContextTypes: true,
-      }
-    ],
-
-    "react/forbid-dom-props": ["off", {forbid: []}],
-
-    "react/jsx-boolean-value": ["error", "never", {always: []}],
-
-    "react/jsx-closing-bracket-location": ["error", "line-aligned"],
-
-    "react/jsx-closing-tag-location": "error",
-
-    "react/jsx-curly-spacing": ["error", "never", {allowMultiline: true}],
-
-    "react/jsx-handler-names": [
-      "off", {
-        eventHandlerPrefix: "handle",
-        eventHandlerPropPrefix: "on",
-      }
-    ],
-
-    "react/jsx-indent-props": ["error", 2],
-
-    "react/jsx-key": "off",
-
-    "react/jsx-max-props-per-line": ["error", {maximum: 1, when: "multiline"}],
-
-    "react/jsx-no-bind": [
-      "error", {
-        ignoreRefs: true,
-        allowArrowFunctions: true,
-        allowFunctions: false,
-        allowBind: false,
-        ignoreDOMComponents: true,
-      }
-    ],
-
-    "react/jsx-no-duplicate-props": ["error", {ignoreCase: true}],
-
-    "react/jsx-no-literals": ["off", {noStrings: true}],
-
-    "react/jsx-no-undef": "error",
-
-    "react/jsx-pascal-case": [
-      "error", {
-        allowAllCaps: true,
-        ignore: [],
-      }
-    ],
-
-    "react/sort-prop-types": [
-      "off", {
-        ignoreCase: true,
-        callbacksLast: false,
-        requiredFirst: false,
-        sortShapeProp: true,
-      }
-    ],
-
-    "react/jsx-sort-prop-types": "off",
-
-    "react/jsx-sort-props": [
-      "off", {
-        ignoreCase: true,
-        callbacksLast: false,
-        shorthandFirst: false,
-        shorthandLast: false,
-        noSortAlphabetically: false,
-        reservedFirst: true,
-      }
-    ],
-
-    "react/jsx-sort-default-props": [
-      "off", {
-        ignoreCase: true,
-      }
-    ],
-
-    "react/jsx-uses-react": ["error"],
-
-    "react/jsx-uses-vars": "error",
-
-    "react/no-danger": "warn",
-
-    "react/no-deprecated": ["error"],
-
-    "react/no-did-mount-set-state": "off",
-
-    "react/no-did-update-set-state": "error",
-
-    "react/no-will-update-set-state": "error",
-
-    "react/no-direct-mutation-state": "off",
-
-    "react/no-is-mounted": "error",
-
-    "react/no-multi-comp": "off",
-
-    "react/no-set-state": "off",
-
-    "react/no-string-refs": "error",
-
-    "react/no-unknown-property": "error",
-
-    "react/prefer-es6-class": ["error", "always"],
-
-    "react/prefer-stateless-function": ["error", {ignorePureComponents: true}],
-
-    "react/prop-types": [
-      "error", {
-        ignore: [],
-        customValidators: [],
-        skipUndeclared: false
-      }
-    ],
-
-    "react/react-in-jsx-scope": "error",
-
-    "react/require-render-return": "error",
-
-    "react/self-closing-comp": "error",
-
-    "react/sort-comp": [
-      "error", {
-        order: [
-          "static-methods",
-          "instance-variables",
-          "lifecycle",
-          "/^on.+$/",
-          "getters",
-          "setters",
-          "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
-          "instance-methods",
-          "everything-else",
-          "rendering",
-        ],
-        groups: {
-          lifecycle: [
-            "displayName",
-            "propTypes",
-            "contextTypes",
-            "childContextTypes",
-            "mixins",
-            "statics",
-            "defaultProps",
-            "constructor",
-            "getDefaultProps",
-            "getInitialState",
-            "state",
-            "getChildContext",
-            "componentWillMount",
-            "componentDidMount",
-            "componentWillReceiveProps",
-            "shouldComponentUpdate",
-            "componentWillUpdate",
-            "componentDidUpdate",
-            "componentWillUnmount",
-          ],
-          rendering: [
-            "/^render.+$/",
-            "render"
-          ],
-        },
-      }
-    ],
-
-    "react/jsx-wrap-multilines": [
-      "error", {
-        declaration: "parens-new-line",
-        assignment: "parens-new-line",
-        return: "parens-new-line",
-        arrow: "parens-new-line",
-        condition: "parens-new-line",
-        logical: "parens-new-line",
-        prop: "parens-new-line",
-      }
-    ],
-
-    "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
-
-    "react/jsx-equals-spacing": ["error", "never"],
-
-    "react/jsx-indent": ["error", 2],
-
-    "react/jsx-no-target-blank": ["error", {enforceDynamicLinks: "always"}],
-
-    "react/jsx-filename-extension": ["error", {extensions: [".jsx"]}],
-
-    "react/jsx-no-comment-textnodes": "error",
-
-    "react/no-render-return-value": "error",
-
-    "react/require-optimization": ["off", {allowDecorators: []}],
-
-    "react/no-find-dom-node": "error",
-
-    "react/forbid-component-props": ["off", {forbid: []}],
-
-    "react/forbid-elements": ["off", {forbid: [],}],
-
-    "react/no-danger-with-children": "error",
-
-    "react/no-unused-prop-types": [
-      "error", {
-        customValidators: [],
-        skipShapeProps: true,
-      }
-    ],
-
-    "react/style-prop-object": "error",
-
-    "react/no-unescaped-entities": "error",
-
-    "react/no-children-prop": "error",
-
-    "react/jsx-tag-spacing": [
-      "error", {
-        closingSlash: "never",
-        beforeSelfClosing: "always",
-        afterOpening: "never",
-        beforeClosing: "never",
-      }
-    ],
-
-    "react/jsx-space-before-closing": ["off", "always"],
-
-    "react/no-array-index-key": "error",
-
-    "react/require-default-props": [
-      "error", {
-        forbidDefaultForRequired: true,
-      }
-    ],
-
-    "react/forbid-foreign-prop-types": ["warn", {allowInPropTypes: true}],
-
-    "react/void-dom-elements-no-children": "error",
-
-    "react/default-props-match-prop-types": [
-      "error",
-      {allowRequiredDefaults: false}
-    ],
-
-    "react/no-redundant-should-component-update": "error",
-
-    "react/no-unused-state": "error",
-
-    "react/boolean-prop-naming": [
-      "off", {
-        propTypeNames: ["bool", "mutuallyExclusiveTrueProps"],
-        rule: "^(is|has)[A-Z]([A-Za-z0-9]?)+",
-        message: "",
-      }
-    ],
-
-    "react/no-typos": "error",
-
-    "react/jsx-curly-brace-presence": [
-      "error",
-      {props: "never", children: "never"}
-    ],
-
-    "react/jsx-one-expression-per-line": ["error", {allow: "single-child"}],
-
-    "react/destructuring-assignment": ["error", "always"],
-
-    "react/no-access-state-in-setstate": "error",
-
-    "react/button-has-type": [
-      "error", {
-        button: true,
-        submit: true,
-        reset: false,
-      }
-    ],
-
-    "react/jsx-child-element-spacing": "off",
-
-    "react/no-this-in-sfc": "error",
-
-    "react/jsx-max-depth": "off",
-
-    "react/jsx-props-no-multi-spaces": "error",
-
-    "react/no-unsafe": "off",
-
-    "react/jsx-fragments": ["off", "syntax"],
-
-    "react/jsx-curly-newline": [
-      "off", {
-        multiline: "consistent",
-        single: "consistent",
-      }
-    ],
-
-    "react/state-in-constructor": ["off", "never"],
-
-    "react/static-property-placement": ["off", "property assignment"],
-
-    "react/jsx-props-no-spreading": [
-      "off", {
-        html: "enforce",
-        custom: "enforce",
-        exceptions: [],
-      }
-    ],
-
-    "react/prefer-read-only-props": "off",
+    // Enforce that anchors have content
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-has-content.md
+    'jsx-a11y/anchor-has-content': ['error', { components: [] }],
+
+    // Require ARIA roles to be valid and non-abstract
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md
+    'jsx-a11y/aria-role': ['error', { ignoreNonDom: false }],
+
+    // Enforce all aria-* props are valid.
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-props.md
+    'jsx-a11y/aria-props': 'error',
+
+    // Enforce ARIA state and property values are valid.
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-proptypes.md
+    'jsx-a11y/aria-proptypes': 'error',
+
+    // Enforce that elements that do not support ARIA roles, states, and
+    // properties do not have those attributes.
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-unsupported-elements.md
+    'jsx-a11y/aria-unsupported-elements': 'error',
+
+    // Enforce that all elements that require alternative text have meaningful information
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md
+    'jsx-a11y/alt-text': ['error', {
+      elements: ['img', 'object', 'area', 'input[type="image"]'],
+      img: [],
+      object: [],
+      area: [],
+      'input[type="image"]': [],
+    }],
+
+    // Prevent img alt text from containing redundant words like "image", "picture", or "photo"
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md
+    'jsx-a11y/img-redundant-alt': 'error',
+
+    // require that JSX labels use "htmlFor"
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md
+    // deprecated: replaced by `label-has-associated-control` rule
+    'jsx-a11y/label-has-for': ['off', {
+      components: [],
+      required: {
+        every: ['nesting', 'id'],
+      },
+      allowChildren: false,
+    }],
+
+    // Enforce that a label tag has a text label and an associated control.
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/b800f40a2a69ad48015ae9226fbe879f946757ed/docs/rules/label-has-associated-control.md
+    'jsx-a11y/label-has-associated-control': ['error', {
+      labelComponents: [],
+      labelAttributes: [],
+      controlComponents: [],
+      assert: 'both',
+      depth: 25
+    }],
+
+    // Enforce that a control (an interactive element) has a text label.
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/control-has-associated-label.md
+    'jsx-a11y/control-has-associated-label': ['error', {
+      labelAttributes: ['label'],
+      controlComponents: [],
+      ignoreElements: [
+        'audio',
+        'canvas',
+        'embed',
+        'input',
+        'textarea',
+        'tr',
+        'video',
+      ],
+      ignoreRoles: [
+        'grid',
+        'listbox',
+        'menu',
+        'menubar',
+        'radiogroup',
+        'row',
+        'tablist',
+        'toolbar',
+        'tree',
+        'treegrid',
+      ],
+      depth: 5,
+    }],
+
+    // require that mouseover/out come with focus/blur, for keyboard-only users
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/mouse-events-have-key-events.md
+    'jsx-a11y/mouse-events-have-key-events': 'error',
+
+    // Prevent use of `accessKey`
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md
+    'jsx-a11y/no-access-key': 'error',
+
+    // Require onBlur instead of onChange
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-onchange.md
+    // EXPLANATION: In React, onChange bound to "input" event rather than to
+    // "blur", so this rule is inconvenient
+    'jsx-a11y/no-onchange': 'off',
+
+    // Elements with an interactive role and interaction handlers must be focusable
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/interactive-supports-focus.md
+    'jsx-a11y/interactive-supports-focus': 'error',
+
+    // Enforce that elements with ARIA roles must have all required attributes
+    // for that role.
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/role-has-required-aria-props.md
+    'jsx-a11y/role-has-required-aria-props': 'error',
+
+    // Enforce that elements with explicit or implicit roles defined contain
+    // only aria-* properties supported by that role.
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/role-supports-aria-props.md
+    'jsx-a11y/role-supports-aria-props': 'error',
+
+    // Enforce tabIndex value is not greater than zero.
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/tabindex-no-positive.md
+    'jsx-a11y/tabindex-no-positive': 'error',
+
+    // Ensure <hX> tags have content and are not aria-hidden
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/heading-has-content.md
+    'jsx-a11y/heading-has-content': ['error', { components: [''] }],
+
+    // Require HTML elements to have a "lang" prop
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/html-has-lang.md
+    'jsx-a11y/html-has-lang': 'error',
+
+    // Require HTML element's lang prop to be valid
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/lang.md
+    'jsx-a11y/lang': 'error',
+
+    // Prevent distracting elements, like <marquee> and <blink>
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-distracting-elements.md
+    'jsx-a11y/no-distracting-elements': ['error', {
+      elements: ['marquee', 'blink'],
+    }],
+
+    // Only allow <th> to have the "scope" attr
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/scope.md
+    'jsx-a11y/scope': 'error',
+
+    // Require onClick be accompanied by onKeyUp/onKeyDown/onKeyPress
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/click-events-have-key-events.md
+    'jsx-a11y/click-events-have-key-events': 'error',
+
+    // Enforce that DOM elements without semantic behavior not have interaction handlers
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md
+    'jsx-a11y/no-static-element-interactions': ['error', {
+      handlers: [
+        'onClick',
+        'onMouseDown',
+        'onMouseUp',
+        'onKeyPress',
+        'onKeyDown',
+        'onKeyUp',
+      ]
+    }],
+
+    // A non-interactive element does not support event handlers (mouse and key handlers)
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-interactions.md
+    'jsx-a11y/no-noninteractive-element-interactions': ['error', {
+      handlers: [
+        'onClick',
+        'onMouseDown',
+        'onMouseUp',
+        'onKeyPress',
+        'onKeyDown',
+        'onKeyUp',
+      ]
+    }],
+
+    // Ensure emoji are accessible
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/accessible-emoji.md
+    'jsx-a11y/accessible-emoji': 'error',
+
+    // Elements with aria-activedescendant must be tabbable
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-activedescendant-has-tabindex.md
+    'jsx-a11y/aria-activedescendant-has-tabindex': 'error',
+
+    // Ensure iframe elements have a unique title
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/iframe-has-title.md
+    'jsx-a11y/iframe-has-title': 'error',
+
+    // Prohibit autoFocus prop
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-autofocus.md
+    'jsx-a11y/no-autofocus': ['error', { ignoreNonDOM: true }],
+
+    // Ensure HTML elements do not specify redundant ARIA roles
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-redundant-roles.md
+    'jsx-a11y/no-redundant-roles': 'error',
+
+    // Media elements must have captions
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/media-has-caption.md
+    'jsx-a11y/media-has-caption': ['error', {
+      audio: [],
+      video: [],
+      track: [],
+    }],
+
+    // WAI-ARIA roles should not be used to convert an interactive element to non-interactive
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-interactive-element-to-noninteractive-role.md
+    'jsx-a11y/no-interactive-element-to-noninteractive-role': ['error', {
+      tr: ['none', 'presentation'],
+    }],
+
+    // WAI-ARIA roles should not be used to convert a non-interactive element to interactive
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-to-interactive-role.md
+    'jsx-a11y/no-noninteractive-element-to-interactive-role': ['error', {
+      ul: ['listbox', 'menu', 'menubar', 'radiogroup', 'tablist', 'tree', 'treegrid'],
+      ol: ['listbox', 'menu', 'menubar', 'radiogroup', 'tablist', 'tree', 'treegrid'],
+      li: ['menuitem', 'option', 'row', 'tab', 'treeitem'],
+      table: ['grid'],
+      td: ['gridcell'],
+    }],
+
+    // Tab key navigation should be limited to elements on the page that can be interacted with.
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-tabindex.md
+    'jsx-a11y/no-noninteractive-tabindex': ['error', {
+      tags: [],
+      roles: ['tabpanel'],
+    }],
+
+    // Ensure <a> tags are valid
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/0745af376cdc8686d85a361ce36952b1fb1ccf6e/docs/rules/anchor-is-valid.md
+    'jsx-a11y/anchor-is-valid': ['error', {
+      components: ['Link'],
+      specialLink: ['to'],
+      aspects: ['noHref', 'invalidHref', 'preferButton'],
+    }],
   },
-
-  settings: {
-    "import/resolver": {
-      node: {
-        extensions: [".js", ".jsx", ".json"]
-      }
-    },
-    react: {
-      pragma: "React",
-      version: "16.0"
-    },
-    propWrapperFunctions: [
-      "forbidExtraProps",
-      "exact",
-      "Object.freeze",
-    ],
-  }
 };
