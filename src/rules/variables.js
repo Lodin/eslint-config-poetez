@@ -24,13 +24,18 @@ module.exports = {
       'error',
       {
         args: 'all',
-        argsIgnorePattern: '^_[a-zA-Z]*$',
+        argsIgnorePattern: '^_',
         caughtErrors: 'all',
-        caughtErrorsIgnorePattern: '^_[a-zA-Z]*$',
+        caughtErrorsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
         vars: 'all',
-        varsIgnorePattern: '^_[a-zA-Z]*$',
+        varsIgnorePattern: '^_',
       },
     ],
-    'no-use-before-define': 'error',
+    'no-use-before-define': ['error', {
+      classes: true,
+      functions: true,
+      variables: true,
+    },],
   },
 };

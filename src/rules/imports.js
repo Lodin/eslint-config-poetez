@@ -7,19 +7,6 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['import'],
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.mjs', '.js', '.json'],
-      },
-    },
-    'import/extensions': ['.js', '.mjs', '.jsx'],
-    'import/core-modules': [],
-    'import/ignore': [
-      'node_modules',
-      '\\.(coffee|scss|css|less|hbs|svg|json)$',
-    ],
-  },
   rules: {
     'import/no-unresolved': ['error', {commonjs: true, caseSensitive: true}],
     'import/named': 'error',
@@ -81,5 +68,18 @@ module.exports = {
     'import/group-exports': 'off',
     // disabled by default; enable if necessary
     'dynamic-import-chunkname': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.mjs', '.js', '.json'],
+      },
+    },
+    'import/extensions': ['.js', '.mjs', '.jsx'],
+    'import/core-modules': [],
+    'import/ignore': [
+      'node_modules',
+      '\\.(coffee|scss|css|less|hbs|svg|json)$',
+    ],
   },
 };

@@ -541,7 +541,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.mjs', '.js', '.ts', '.json', '.jsx'],
+        extensions: ['.mjs', '.js', '.json', '.jsx'],
       },
     },
     react: {
