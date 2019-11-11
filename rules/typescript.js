@@ -350,7 +350,7 @@ module.exports = {
     // Enforce the consistent use of either backticks, double, or single quotes
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/quotes.md
     quotes: 'off',
-    '@typescript-eslint/quotes': 'error',
+    '@typescript-eslint/quotes': stylisticIssuesRules['quotes'],
 
     // Enforce giving compare argument to Array#sort
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/require-array-sort-compare.md
