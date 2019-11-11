@@ -5,9 +5,6 @@ const variablesRules = require('./variables').rules;
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
     project: `${process.cwd()}/tsconfig.json`,
   },
   plugins: ['@typescript-eslint'],
