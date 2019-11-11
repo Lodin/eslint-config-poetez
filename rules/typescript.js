@@ -72,7 +72,16 @@ module.exports = {
 
     // Require explicit accessibility modifiers on class properties and methods
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md
-    '@typescript-eslint/explicit-member-accessibility': ['error', 'explicit'],
+    '@typescript-eslint/explicit-member-accessibility': ['error', {
+      accessibility: 'explicit',
+      overrides: {
+        accessors: 'explicit',
+        constructors: 'explicit',
+        methods: 'explicit',
+        properties: 'explicit',
+        parameterProperties: 'explicit'
+      }
+    }],
 
     // Require or disallow spacing between function identifiers and their invocations
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/func-call-spacing.md
