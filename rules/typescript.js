@@ -312,7 +312,8 @@ module.exports = {
 
     // Disallows the use of require statements except in import statements
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-var-requires.md
-    '@typescript-eslint/no-var-requires': 'error',
+    // EXPLANATION: handled by @typescript-eslint/no-require-imports
+    '@typescript-eslint/no-var-requires': 'off',
 
     // Prefer a ‘for-of’ loop over a standard ‘for’ loop if the index is only used to access the array being iterated
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-for-of.md
