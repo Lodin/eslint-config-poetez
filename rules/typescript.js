@@ -59,17 +59,6 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-definitions.md
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
 
-    // Require explicit return types on functions and class methods
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-function-return-type.md
-    '@typescript-eslint/explicit-function-return-type': [
-      'error',
-      {
-        allowExpressions: true,
-        allowTypedFunctionExpressions: true,
-        allowHigherOrderFunctions: true,
-      },
-    ],
-
     // Require explicit accessibility modifiers on class properties and methods
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md
     '@typescript-eslint/explicit-member-accessibility': ['error', {
@@ -400,10 +389,27 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unified-signatures.md
     '@typescript-eslint/unified-signatures': 'error',
   },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        // Require explicit return types on functions and class methods
+        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-function-return-type.md
+        '@typescript-eslint/explicit-function-return-type': [
+          'error',
+          {
+            allowExpressions: true,
+            allowTypedFunctionExpressions: true,
+            allowHigherOrderFunctions: true,
+          },
+        ],
+      }
+    }
+  ],
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.mjs', '.js', '.ts', '.json'],
+        extensions: ['.mjs', '.js', '.ts', '.tsx', '.json'],
       },
     },
   }
