@@ -2,7 +2,16 @@
   "name": "eslint-config-poetez",
   "version": "0.1.4",
   "description": "A ESLint config for Poetez Project",
-  "main": "src/index.js",
+  "main": "index.js",
+  "files": [
+    "rules",
+    "index.js",
+    "lit.js",
+    "react.js",
+    "typescript.js",
+    "typescript-lit.js",
+    "typescript-react.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,7 +31,17 @@
   },
   "homepage": "https://github.com/Lodin/eslint-config-poetez#readme",
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@typescript-eslint/parser": "^2.12.0",
     "babel-eslint": "^10.0.3",
-    "eslint-plugin-import": "^2.18.2"
+    "confusing-browser-globals": "^1.0.9",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-lit": "^1.2.0",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
   }
 }
