@@ -32,10 +32,13 @@ module.exports = {
         varsIgnorePattern: '^_',
       },
     ],
-    'no-use-before-define': ['error', {
-      classes: true,
-      functions: true,
-      variables: true,
-    },],
+    'no-use-before-define': [
+      'error',
+      {
+        classes: true,
+        functions: true,
+        variables: true,
+      },
+    ],
   },
 };

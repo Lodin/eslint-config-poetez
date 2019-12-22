@@ -15,10 +15,13 @@ module.exports = {
 
     // Requires using either T[] or Array<T> for arrays
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/array-type.md
-    '@typescript-eslint/array-type': ['error', {
-      default: 'array-simple',
-      readonly: 'array-simple'
-    }],
+    '@typescript-eslint/array-type': [
+      'error',
+      {
+        default: 'array-simple',
+        readonly: 'array-simple',
+      },
+    ],
 
     // Disallows awaiting a value that is not a Promise
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/await-thenable.md
@@ -393,18 +396,21 @@ module.exports = {
 
         // Require explicit accessibility modifiers on class properties and methods
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md
-        '@typescript-eslint/explicit-member-accessibility': ['error', {
-          accessibility: 'explicit',
-          overrides: {
-            accessors: 'explicit',
-            constructors: 'explicit',
-            methods: 'explicit',
-            properties: 'explicit',
-            parameterProperties: 'explicit'
-          }
-        }],
-      }
-    }
+        '@typescript-eslint/explicit-member-accessibility': [
+          'error',
+          {
+            accessibility: 'explicit',
+            overrides: {
+              accessors: 'explicit',
+              constructors: 'explicit',
+              methods: 'explicit',
+              properties: 'explicit',
+              parameterProperties: 'explicit',
+            },
+          },
+        ],
+      },
+    },
   ],
   settings: {
     'import/resolver': {
@@ -412,5 +418,5 @@ module.exports = {
         extensions: ['.mjs', '.js', '.ts', '.tsx', '.json'],
       },
     },
-  }
+  },
 };
