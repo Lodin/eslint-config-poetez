@@ -24,8 +24,9 @@ module.exports = {
     'func-style': ['error', 'declaration', {allowArrowFunctions: true}],
     // disallows single param with linebreak; not good
     'function-paren-newline': 'off',
+    'function-call-argument-newline': ['error', 'consistent'],
     // no ID to forbid by default
-    'id-blacklist': 'off',
+    'id-denylist': 'off',
     // too strict
     'id-length': 'off',
     // too strict
@@ -67,7 +68,10 @@ module.exports = {
     ],
     // it can be impossible to avoid too big files
     'max-lines': 'off',
-    'max-nested-callbacks': ['error', 4],
+    // too strict
+    'max-lines-per-function': 'off',
+    // too strict
+    'max-nested-callbacks': 'off',
     'max-params': ['error', 6],
     // too strict
     'max-statements': 'off',
@@ -85,6 +89,8 @@ module.exports = {
     'no-bitwise': 'error',
     // continue is useful and reduces unnecessary nesting
     'no-continue': 'off',
+    // inline comments are useful
+    'no-inline-comments': 'off',
     'no-lonely-if': 'error',
     'no-mixed-operators': 'error',
     'no-mixed-spaces-and-tabs': 'error',
@@ -127,11 +133,10 @@ module.exports = {
         next: 'return',
       },
     ],
+    'prefer-exponentiation-operator': 'error',
     'prefer-object-spread': 'error',
     'quote-props': ['error', 'as-needed'],
     quotes: ['error', 'single', {allowTemplateLiterals: true}],
-    // JSDoc is useful, but enforcing it is too strict
-    'require-jsdoc': 'off',
     semi: ['error', 'always'],
     'semi-spacing': 'error',
     'semi-style': 'error',

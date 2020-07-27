@@ -1,9 +1,11 @@
 const reactA11y = require('../../rules/react-a11y');
 const {checkRules, registerNextSiblingFinder, showHeader} = require('./utils');
 
+const url = 'https://github.com/jsx-eslint/eslint-plugin-jsx-a11y';
+
 module.exports = async (page) => {
-  showHeader('React A11y');
-  await page.goto('https://github.com/jsx-eslint/eslint-plugin-jsx-a11y');
+  showHeader('React A11y', url);
+  await page.goto(url);
 
   await registerNextSiblingFinder(page);
 
@@ -15,7 +17,7 @@ module.exports = async (page) => {
 
     return Array.from(
       list.querySelectorAll('li > a'),
-      ({textContent}) => textContent,
+      ({textContent}) => `jsx-a11y/${textContent}`,
     );
   });
 

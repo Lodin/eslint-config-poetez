@@ -53,6 +53,16 @@ module.exports = {
     // EXPLANATION: No specific properties to forbid
     'react/forbid-dom-props': 'off',
 
+    // Enforce a specific function type for function components
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
+
     // Enforce boolean attributes notation in JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
     'react/jsx-boolean-value': ['error', 'never', {always: []}],
@@ -114,9 +124,25 @@ module.exports = {
     // EXPLANATION: Unnecessary rule
     'react/jsx-no-literals': 'off',
 
+    // Prevent usage of javascript: URLs
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-script-url.md
+    'react/jsx-no-script-url': [
+      'error',
+      [
+        {
+          name: 'Link',
+          props: ['to'],
+        },
+      ],
+    ],
+
     // Disallow undeclared variables in JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-undef.md
     'react/jsx-no-undef': ['error', {allowGlobals: true}],
+
+    // Disallow unnecessary fragments
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-useless-fragment.md
+    'react/jsx-no-useless-fragment': 'error',
 
     // Enforce PascalCase for user-defined JSX components
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md
@@ -127,6 +153,10 @@ module.exports = {
         ignore: [],
       },
     ],
+
+    // Prevent adjacent inline elements not separated by whitespace
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-adjacent-inline-elements.md
+    'react/no-adjacent-inline-elements': 'error',
 
     // Enforce propTypes declarations alphabetical sorting
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-prop-types.md
@@ -139,9 +169,6 @@ module.exports = {
         sortShapeProp: true,
       },
     ],
-
-    // Deprecated in favor of react/jsx-sort-props
-    'react/jsx-sort-prop-types': 'off',
 
     // Enforce props alphabetical sorting
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md
