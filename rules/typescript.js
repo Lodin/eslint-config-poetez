@@ -34,13 +34,16 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-ts-comment.md
     // EXPLANATION: Complete banning is too strict, but requiring the
     // description is a nice idea
-    '@typescript-eslint/ban-ts-comment': {
-      'ts-expect-error': 'allow-with-description',
-      'ts-ignore': 'allow-with-description',
-      'ts-nocheck': 'allow-with-description',
-      'ts-check': 'allow-with-description',
-      minimumDescriptionLength: 3,
-    },
+    '@typescript-eslint/ban-ts-comment': [
+      'error',
+      {
+        'ts-expect-error': 'allow-with-description',
+        'ts-ignore': 'allow-with-description',
+        'ts-nocheck': 'allow-with-description',
+        'ts-check': 'allow-with-description',
+        minimumDescriptionLength: 3,
+      },
+    ],
 
     // Bans // tslint:<rule-flag> comments from being used.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-tslint-comment.md
