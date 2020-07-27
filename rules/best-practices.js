@@ -10,15 +10,19 @@ module.exports = {
     curly: ['error', 'all'],
     // use "no default" comment to describe that there shouldn't be any default
     'default-case': ['error', {commentPattern: '^no\\sdefault'}],
+    'default-case-last': 'error',
+    'default-param-last': 'error',
     'dot-location': ['error', 'property'],
     'dot-notation': ['error', {allowPattern: '^[a-zA-Z]+([_-][a-zA-Z]+)+$'}],
     // using non-strict comparison with null could be useful
     eqeqeq: ['error', 'always', {null: 'ignore'}],
+    'grouped-accessor-pairs': ['error', 'getBeforeSet'],
     'guard-for-in': 'error',
     'max-classes-per-file': ['error', 1],
     'no-alert': 'error',
     'no-caller': 'error',
     'no-case-declarations': 'error',
+    'no-constructor-return': 'error',
     'no-div-regex': 'error',
     'no-else-return': 'error',
     'no-empty-function': 'error',
@@ -69,6 +73,7 @@ module.exports = {
     // handled by "no-labels" rule
     'no-unused-labels': 'off',
     'no-useless-call': 'error',
+    'no-useless-catch': 'error',
     // handled by "prefer-template" rule
     'no-useless-concat': 'off',
     'no-useless-escape': 'error',
@@ -77,10 +82,13 @@ module.exports = {
     // it is necessary to do warning comments sometimes
     'no-warning-comments': 'off',
     'no-with': 'error',
+    'prefer-named-capture-group': 'error',
     'prefer-promise-reject-errors': 'error',
+    'prefer-regex-literals': 'error',
     radix: 'error',
     // forbids returning promises which is not useful
     'require-await': 'off',
+    'require-unicode-regexp': 'error',
     // handled by "no-vars" rule
     'vars-on-top': 'off',
     'wrap-iife': ['error', 'inside'],

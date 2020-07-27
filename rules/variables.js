@@ -4,7 +4,6 @@ module.exports = {
   rules: {
     // handled by "no-var" rule
     'init-declarations': 'off',
-    'no-catch-shadow': 'error',
     'no-delete-var': 'error',
     // handled by "no-labels" rule
     'no-label-var': 'off',
