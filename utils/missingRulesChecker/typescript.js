@@ -1,11 +1,12 @@
 const typescript = require('../../rules/typescript');
 const {checkRules, registerNextSiblingFinder, showHeader} = require('./utils');
 
+const url =
+  'https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin';
+
 module.exports = async (page) => {
-  showHeader('@typescript-eslint');
-  await page.goto(
-    'https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin',
-  );
+  showHeader('@typescript-eslint', url);
+  await page.goto(url);
 
   await registerNextSiblingFinder(page);
 
@@ -28,9 +29,8 @@ module.exports = async (page) => {
     return [supportedRules, extensionRules];
   });
 
-  checkRules(
-    'typescript',
-    [...supportedRules, ...extensionRules],
-    typescript.rules,
-  );
+  checkRules('typescript', [...supportedRules, ...extensionRules], {
+    ...typescript.rules,
+    ...Object.assign({}, ...typescript.overrides.map(({rules}) => rules)),
+  });
 };

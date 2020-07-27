@@ -4,7 +4,14 @@ const possibleErrors = require('../../rules/possible-errors');
 const strict = require('../../rules/strict');
 const stylisticIssues = require('../../rules/stylistic-issues');
 const variables = require('../../rules/variables');
-const {checkDeprecated, checkRules, showHeader} = require('./utils');
+const {
+  checkRules,
+  registerNextSiblingFinder,
+  showHeader,
+  zip,
+} = require('./utils');
+
+const url = 'https://eslint.org/docs/rules/';
 
 const ruleListNames = [
   'best-practices',
@@ -17,12 +24,11 @@ const ruleListNames = [
 
 const deprecatedRuleNameList = ['deprecated', 'removed'];
 
-const extractTextContent = async (page, selector) =>
-  page.$$eval(selector, (nodes) => nodes.map((node) => node.textContent));
-
 module.exports = async (page) => {
-  showHeader('eslint');
-  await page.goto('https://eslint.org/docs/rules/');
+  showHeader('eslint', url);
+  await page.goto(url);
+
+  await registerNextSiblingFinder(page);
 
   const [
     bestPracticesLoadedSet,
@@ -31,43 +37,73 @@ module.exports = async (page) => {
     strictLoadedSet,
     stylisticIssuesLoadedSet,
     variablesLoadedSet,
-  ] = await Promise.all(
-    ruleListNames.map(
-      async (name) =>
-        await extractTextContent(
-          page,
-          `#${name} ~ .rule-list tr > td:nth-child(3)`,
-        ),
-    ),
+  ] = await page.evaluate(
+    (ruleListNames) =>
+      ruleListNames.map((id) => {
+        const table = window.findNextSibling(
+          document.querySelector(`#${id}`),
+          '.rule-list',
+        );
+
+        return Array.from(
+          table.querySelectorAll('tr > td:nth-child(3)'),
+          ({textContent}) => textContent,
+        );
+      }),
+    ruleListNames,
   );
 
-  checkRules('bestPractices', bestPracticesLoadedSet, bestPractices.rules);
-  checkRules('es6', es6LoadedSet, es6.rules);
-  checkRules('possibleErrors', possibleErrorsLoadedSet, possibleErrors.rules);
-  checkRules('strict', strictLoadedSet, strict.rules);
+  const [deprecatedLoadedSet, removedLoadedSet] = await page.evaluate(
+    (deprecatedRuleNameList) =>
+      deprecatedRuleNameList.map((id) => {
+        const table = window.findNextSibling(
+          document.querySelector(`#${id}`),
+          '.rule-list',
+        );
+
+        return [
+          Array.from(
+            table.querySelectorAll('tr > td:first-child'),
+            ({textContent}) => textContent,
+          ),
+          Array.from(
+            table.querySelectorAll('tr > td:last-child'),
+            ({textContent}) => textContent,
+          ),
+        ];
+      }),
+    deprecatedRuleNameList,
+  );
+
+  const commonDeprecations = [
+    ...zip(...deprecatedLoadedSet),
+    ...zip(...removedLoadedSet),
+  ];
+
+  checkRules(
+    'bestPractices',
+    bestPracticesLoadedSet,
+    bestPractices.rules,
+    commonDeprecations,
+  );
+  checkRules('es6', es6LoadedSet, es6.rules, commonDeprecations);
+  checkRules(
+    'possibleErrors',
+    possibleErrorsLoadedSet,
+    possibleErrors.rules,
+    commonDeprecations,
+  );
+  checkRules('strict', strictLoadedSet, strict.rules, commonDeprecations);
   checkRules(
     'stylisticIssues',
     stylisticIssuesLoadedSet,
     stylisticIssues.rules,
+    commonDeprecations,
   );
-  checkRules('variables', variablesLoadedSet, variables.rules);
-
-  const [deprecatedLoadedSet, removedLoadedSet] = await Promise.all(
-    deprecatedRuleNameList.map(
-      async (name) =>
-        await Promise.all([
-          extractTextContent(page, `#${name} ~ .rule-list tr > td:first-child`),
-          extractTextContent(page, `#${name} ~ .rule-list tr > td:last-child`),
-        ]),
-    ),
+  checkRules(
+    'variables',
+    variablesLoadedSet,
+    variables.rules,
+    commonDeprecations,
   );
-
-  const commonDeprecations = [...deprecatedLoadedSet, ...removedLoadedSet];
-
-  checkDeprecated('bestPractices', commonDeprecations, bestPractices.rules);
-  checkDeprecated('es6', commonDeprecations, es6.rules);
-  checkDeprecated('possibleErrors', commonDeprecations, possibleErrors.rules);
-  checkDeprecated('strict', commonDeprecations, strict.rules);
-  checkDeprecated('stylisticIssues', commonDeprecations, stylisticIssues.rules);
-  checkDeprecated('variables', commonDeprecations, variables.rules);
 };
