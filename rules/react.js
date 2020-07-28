@@ -545,7 +545,8 @@ module.exports = {
 
     // Enforce state initialization style
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/state-in-constructor.md
-    'react/state-in-constructor': ['error', 'never'],
+    // EXPLANATION: Too strict
+    'react/state-in-constructor': 'off',
 
     // Enforces where React component static properties should be positioned
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/static-property-placement.md
