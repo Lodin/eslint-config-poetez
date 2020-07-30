@@ -25,6 +25,8 @@ module.exports = {
       'error',
       {extensions: ['.js', '.jsx', '.tsx']},
     ],
+    // We don't need PropTypes for Typescript
+    'react/prop-types': 'off',
   },
   settings: {
     'import/resolver': {
