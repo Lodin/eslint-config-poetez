@@ -1,6 +1,6 @@
 module.exports = {
   rules: {
-    // React components usually use PascalCase for naming
+    // React usually uses PascalCase for component naming
     '@typescript-eslint/naming-convention': [
       'error',
       {
@@ -21,6 +21,8 @@ module.exports = {
         format: ['PascalCase'],
       },
     ],
+    // Handled by react/sort-comp
+    '@typescript-eslint/member-ordering': 'off',
     'react/jsx-filename-extension': [
       'error',
       {extensions: ['.js', '.jsx', '.tsx']},
