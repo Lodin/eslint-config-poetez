@@ -460,7 +460,8 @@ module.exports = {
     // Requires that function parameters are typed as readonly to prevent
     // accidental mutation of inputs
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-readonly-parameter-types.md
-    '@typescript-eslint/prefer-readonly-parameter-types': 'error',
+    // EXPLANATION: Works weird, too irritating.
+    '@typescript-eslint/prefer-readonly-parameter-types': 'off',
 
     // Prefer using type parameter when calling Array#reduce instead of casting
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-reduce-type-parameter.md
